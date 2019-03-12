@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="grey">#dddddd</color>
+    <color name="grey_dark">#df565454</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    //RxTools颜色
+    <color name="green_xiaomi">#52BA97</color>
+</resources>

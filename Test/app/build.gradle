@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "comt.example.dell_pc.test"
+        minSdkVersion 23
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    //折叠控件，解决了滚动冲突
+    implementation 'com.github.cpoopc:scrollablelayoutlib:1.0.1'
+    //轮播
+    implementation 'com.youth.banner:banner:1.4.10'  //轮播
+    //Fragment返回键
+    implementation 'com.github.ikidou:FragmentBackHandler:2.1'
+    //基础工具库
+    implementation "com.github.vondear.RxTool:RxKit:v2.0.4"
+    //UI库
+    implementation "com.github.vondear.RxTool:RxUI:v2.0.4"
+    //功能库（Zxing扫描与生成二维码条形码 支付宝 微信）
+    implementation "com.github.vondear.RxTool:RxFeature:v2.0.4"
+    //ArcGis For Android工具库（API：100.1以上版本）
+    implementation "com.github.vondear.RxTool:RxArcGisKit:v2.0.4"
+
+    //友盟
+    //PushSDK必须依赖基础组件库，所以需要加入对应依赖
+    implementation 'com.umeng.sdk:common:1.5.3'
+    //PushSDK必须依赖utdid库，所以需要加入对应依赖
+//    implementation 'com.umeng.sdk:utdid:1.1.5.3'
+    //PushSDK
+    implementation 'com.umeng.sdk:push:4.2.0'
+
+    //3d地图
+    implementation 'com.amap.api:3dmap:6.1.0'
+    //    //导航
+    //    implementation 'com.amap.api:navi-3dmap:6.1.0'
+    //    //搜索
+    //    implementation 'com.amap.api:search:6.1.0'
+    //定位
+    implementation 'com.amap.api:location:3.8.0'
+
+    //刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-12'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-12'
+    //没有使用特殊Header，可以不加这行
+
+    //本来有的
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
+    implementation 'com.android.support:design:28.0.0-rc01'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:support-vector-drawable:28.0.0-rc01'
+    implementation 'com.android.support:support-v4:28.0.0-rc01'
+
+    //rxvolley库
+    //http库
+    implementation 'com.kymjs.rxvolley:rxvolley:2.0.0'
+    // If use okhttp function
+    implementation 'com.kymjs.rxvolley:okhttp:1.1.4'
+    //or
+    implementation 'com.kymjs.rxvolley:okhttp3:1.1.4'
+
+    //添加Gson依赖
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.android.support:support-v4:28.0.0-rc01'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
